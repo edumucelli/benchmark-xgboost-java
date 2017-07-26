@@ -33,10 +33,9 @@ data %>% unite(UC, ROWS, COLUMNS, sep = "x") %>%
         labs(title = "XGBoost Java") +
         xlab("Number of columns") +
         ylab("Time (ms)") +
-        ggtitle('Benchmark ML using GLM and XGBoost linear') + 
+        ggtitle('Benchmark ML using Boosting') + 
         geom_bar(stat="identity") +
         geom_errorbar(aes(ymin = MEAN_TIME_MILLIS-SE_TIME_MILLIS, ymax = MEAN_TIME_MILLIS+SE_TIME_MILLIS), width = 0.2) +
-        # scale_y_continuous(breaks = seq(0, 150, 15)) +
         facet_wrap(~UC) +
         theme(legend.position = "bottom", legend.title = element_blank(), axis.title.x = element_blank(), axis.text.x = element_blank())
 ggsave(output_file)
