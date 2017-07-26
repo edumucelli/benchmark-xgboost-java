@@ -1,4 +1,6 @@
+import java.util.List;
+
 public interface BasePredictor {
-    void predict();
+    List<PredictorResult> predict();
     boolean loadModel();
 }

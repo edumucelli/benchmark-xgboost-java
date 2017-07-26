@@ -4,6 +4,8 @@ import org.rosuda.JRI.Rengine;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class RJavaPredictor implements BasePredictor {
@@ -40,7 +42,7 @@ public class RJavaPredictor implements BasePredictor {
         public void rSaveHistory(Rengine re, String filename) {}
     }
 
-    private Rengine engine = new Rengine(new String[] {"--no-save"}, false, new LoggingConsole(log));
+    private Rengine engine = Rengine.getMainEngine();
 
     private Integer numberOfColumns;
     private Integer numberOfRows;
@@ -48,11 +50,19 @@ public class RJavaPredictor implements BasePredictor {
     private Utils.Method method;
     private String modelFilename;
 
+    private final String NAME = "RJava";
+
+    private List<PredictorResult> results = new ArrayList<>();
+
     RJavaPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
-        this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
         this.method = method;
         this.modelFilename = String.format("%s.benchmark.%s.r", method.getName(), numberOfColumns);
+        this.numberOfColumns = numberOfColumns;
+
+        if (engine == null) {
+            engine = new Rengine(new String[] {"--no-save"}, false, new LoggingConsole(log));
+        }
     }
 
 //    private String modelName;
@@ -90,7 +100,7 @@ public class RJavaPredictor implements BasePredictor {
     }
 
     @Override
-    public void predict() {
+    public List<PredictorResult> predict() {
         engine.assign("NUMBER_OF_ROWS", new int[]{numberOfRows});
         engine.assign("NUMBER_OF_FEATURES", new int[]{numberOfColumns});
 
@@ -104,8 +114,14 @@ public class RJavaPredictor implements BasePredictor {
             REXP dataFrame = engine.eval("as.data.frame(predict(model_fit, newdata = data, type=\"prob\"))");
             Instant end = Instant.now();
             long repeatDuration = Duration.between(start, end).toMillis();
-            log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, method.getName()));
+
+            String label = String.format("%s (%s)", NAME, method.getName().toUpperCase());
+            log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, label));
+
+            PredictorResult result = new PredictorResult(numberOfRows, numberOfColumns, repeatDuration, label);
+            results.add(result);
         }
+        return results;
     }
 
     //    public void setTesting(int numberOfElements) {

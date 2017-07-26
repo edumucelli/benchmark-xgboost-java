@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 @Slf4j
@@ -20,16 +22,21 @@ public class XGBoost4JPredictor implements BasePredictor {
     private String modelFilename;
 
     private Booster predictor;
-    private Utils.Method method = Utils.Method.XGBOOST4J;
+    private Utils.Method method;
 
-    XGBoost4JPredictor(Integer numberOfColumns, Integer numberOfRows) {
+    private final String NAME = "XGBoost4J";
+
+    private List<PredictorResult> results = new ArrayList<>();
+
+    XGBoost4JPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
+        this.method = method;
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
-        this.modelFilename = String.format("xgbTree.benchmark.%s.xgb", this.numberOfColumns);
+        this.modelFilename = String.format("%s.benchmark.%s.xgb", method.getName(), this.numberOfColumns);
     }
 
     @Override
-    public void predict() {
+    public List<PredictorResult> predict() {
 
         Random random = new Random();
         int numberOfRepeats = 100;
@@ -50,13 +57,19 @@ public class XGBoost4JPredictor implements BasePredictor {
                 Instant start = Instant.now();
                 float[][] predictions = predictor.predict(matrix);
                 Instant end = Instant.now();
+
                 repeatDuration = Duration.between(start, end).toMillis();
-                log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, method.getName()));
-                // log.info(Arrays.deepToString(predictions));
+
+                String label = String.format("%s (%s)", NAME, method.getName());
+                log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, label));
+
+                PredictorResult result = new PredictorResult(numberOfRows, numberOfColumns, repeatDuration, label);
+                results.add(result);
             } catch (XGBoostError xgBoostError) {
                 xgBoostError.printStackTrace();
             }
         }
+        return results;
     }
 
     @Override

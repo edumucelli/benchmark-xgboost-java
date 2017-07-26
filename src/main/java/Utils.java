@@ -1,21 +1,16 @@
+import java.io.IOException;
+import java.io.Writer;
 import java.util.Random;
 
 public class Utils {
 
     private static Random random = new Random();
 
-    public static double randomInRange(double min, double max) {
-        double range = max - min;
-        double scaled = random.nextDouble() * range;
-        return scaled + min;
-    }
-
     enum Method {
         GBM("gbm"),
         GLM("glm"),
         XGB("xgbTree"),
-        XGBOOST4J("XGBoost4j"),
-        XGBOOST_PREDICTOR("XGBPredictor");
+        XGB_LINEAR("xgbLinear");
 
         private final String name;
 
@@ -25,6 +20,15 @@ public class Utils {
 
         public String getName() {
             return this.name;
+        }
+    }
+
+    static void writeLine(Writer w, String line) {
+        StringBuilder sb = new StringBuilder();
+        try {
+            w.append(sb.append(line).append("\n").toString());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

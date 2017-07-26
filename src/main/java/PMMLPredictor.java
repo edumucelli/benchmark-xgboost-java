@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,10 @@ class PMMLPredictor implements BasePredictor {
     private String modelFilename;
 
     private ModelEvaluator<?> evaluator;
+
+    private final String NAME = "PMML";
+
+    private List<PredictorResult> results = new ArrayList<>();
 
     PMMLPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
         this.numberOfColumns = numberOfColumns;
@@ -52,9 +57,9 @@ class PMMLPredictor implements BasePredictor {
     }
 
     @Override
-    public void predict() {
+    public List<PredictorResult> predict() {
 
-        Map<FieldName, ?> results;
+        Map<FieldName, ?> predictions;
         List<InputField> inputFields;
         Map<FieldName, FieldValue> arguments;
 
@@ -77,8 +82,8 @@ class PMMLPredictor implements BasePredictor {
 
                 Instant start = Instant.now();
 
-                results = evaluator.evaluate(arguments);
-                ProbabilityDistribution probabilityDistribution = (ProbabilityDistribution) results.get(evaluator.getTargetField().getName());
+                predictions = evaluator.evaluate(arguments);
+                ProbabilityDistribution probabilityDistribution = (ProbabilityDistribution) predictions.get(evaluator.getTargetField().getName());
                 probabilityDistribution.getProbability("true");
 
                 Instant end = Instant.now();
@@ -86,8 +91,16 @@ class PMMLPredictor implements BasePredictor {
                 rowDuration = Duration.between(start, end).toMillis();
                 repeatDuration += rowDuration;
             }
-            log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, method.getName().toUpperCase()));
+
+            String label = String.format("%s (%s)", NAME, method.getName().toUpperCase());
+
+            log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, label));
+
+            PredictorResult result = new PredictorResult(numberOfRows, numberOfColumns, repeatDuration, label);
+            results.add(result);
         }
+
+        return results;
 
 //        inputFields = evaluator.getInputFields();
 //        for (InputField inputField : inputFields) {

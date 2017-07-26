@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.stream.DoubleStream;
 
@@ -18,12 +20,17 @@ public class XGBoostPredictor implements BasePredictor {
     private String modelFilename;
 
     private Predictor predictor;
-    private Utils.Method method = Utils.Method.XGBOOST_PREDICTOR;
+    private Utils.Method method;
 
-    XGBoostPredictor(Integer numberOfColumns, Integer numberOfRows) {
+    private final String NAME = "XGB-Predictor";
+
+    private List<PredictorResult> results = new ArrayList<>();
+
+    XGBoostPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
+        this.method = method;
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
-        this.modelFilename = String.format("xgbTree.benchmark.%s.xgb", this.numberOfColumns);
+        this.modelFilename = String.format("%s.benchmark.%s.xgb", method.getName(), this.numberOfColumns);
     }
 
     @Override
@@ -41,7 +48,7 @@ public class XGBoostPredictor implements BasePredictor {
     }
 
     @Override
-    public void predict() {
+    public List<PredictorResult> predict() {
 
         int numberOfRepeats = 100;
         Random random = new Random();
@@ -72,7 +79,10 @@ public class XGBoostPredictor implements BasePredictor {
                 repeatDuration += rowDuration;
                 // log.info(Arrays.toString(prediction));
             }
-            log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, method.getName()));
+            log.info(String.format("%s, %s, %s, %s (%s)", numberOfRows, numberOfColumns, repeatDuration, NAME, method.getName()));
+            PredictorResult result = new PredictorResult(numberOfRows, numberOfColumns, repeatDuration, String.format("%s (%s)", NAME, method.getName()));
+            results.add(result);
         }
+        return results;
     }
 }
