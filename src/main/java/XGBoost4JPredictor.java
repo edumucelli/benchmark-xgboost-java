@@ -19,6 +19,8 @@ public class XGBoost4JPredictor implements BasePredictor {
     private Integer numberOfColumns;
     private Integer numberOfRows;
 
+    private Integer numberOfRepeats;
+
     private String modelFilename;
 
     private Booster predictor;
@@ -28,10 +30,11 @@ public class XGBoost4JPredictor implements BasePredictor {
 
     private List<PredictorResult> results = new ArrayList<>();
 
-    XGBoost4JPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
+    XGBoost4JPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows, Integer numberOfRepeats) {
         this.method = method;
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
+        this.numberOfRepeats = numberOfRepeats;
         this.modelFilename = String.format("%s.benchmark.%s.xgb", method.getName(), this.numberOfColumns);
     }
 
@@ -39,7 +42,6 @@ public class XGBoost4JPredictor implements BasePredictor {
     public List<PredictorResult> predict() {
 
         Random random = new Random();
-        int numberOfRepeats = 100;
 
         for (int j = 0; j < numberOfRepeats; j++) {
             long repeatDuration;

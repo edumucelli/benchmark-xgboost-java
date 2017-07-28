@@ -12,7 +12,7 @@ public class Runner {
 
         // log.info(System.getProperty("java.library.path"));
 
-        String csvFile = "results_boosting.csv"; // "results_glm.csv";
+        String csvFile = "results_boosting.csv"; // "results_linear.csv";
         FileWriter writer = new FileWriter(csvFile);
 
         List<PredictorResult> results = new ArrayList<>();
@@ -20,32 +20,34 @@ public class Runner {
         List<Integer> columns = Arrays.asList(100, 500, 1000);  // Number of features
         List<Integer> rows = Arrays.asList(100, 500, 1000);     // Number of elements to predict
 
+        Integer numberOfRepeats = 500;
+
         for (Integer numberOfColumns : columns) {
             for (Integer numberOfRows : rows) {
 
                 // Utils.Method.GBM or GLM
-                RJavaPredictor rJavaPredictor = new RJavaPredictor(Utils.Method.GBM, numberOfColumns, numberOfRows);
+                RJavaPredictor rJavaPredictor = new RJavaPredictor(Utils.Method.GBM, numberOfColumns, numberOfRows, numberOfRepeats);
 
                 if (rJavaPredictor.loadModel()) {
                     results.addAll(rJavaPredictor.predict());
                 }
 
                 // Utils.Method.GBM or GLM
-                PMMLPredictor pmmlPredictor = new PMMLPredictor(Utils.Method.GBM, numberOfColumns, numberOfRows);
+                PMMLPredictor pmmlPredictor = new PMMLPredictor(Utils.Method.GBM, numberOfColumns, numberOfRows, numberOfRepeats);
 
                 if (pmmlPredictor.loadModel()) {
                     results.addAll(pmmlPredictor.predict());
                 }
 
                 // Utils.Method.XGB or XGB_LINEAR
-                XGBoostPredictor xgBoostPredictor = new XGBoostPredictor(Utils.Method.XGB, numberOfColumns, numberOfRows);
+                XGBoostPredictor xgBoostPredictor = new XGBoostPredictor(Utils.Method.XGB, numberOfColumns, numberOfRows, numberOfRepeats);
 
                 if (xgBoostPredictor.loadModel()) {
                     results.addAll(xgBoostPredictor.predict());
                 }
 
                 // Utils.Method.XGB or XGB_LINEAR
-                XGBoost4JPredictor xgBoost4jPredictor = new XGBoost4JPredictor(Utils.Method.XGB, numberOfColumns, numberOfRows);
+                XGBoost4JPredictor xgBoost4jPredictor = new XGBoost4JPredictor(Utils.Method.XGB, numberOfColumns, numberOfRows, numberOfRepeats);
 
                 if (xgBoost4jPredictor.loadModel()) {
                     results.addAll(xgBoost4jPredictor.predict());

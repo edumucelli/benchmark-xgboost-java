@@ -17,6 +17,8 @@ public class XGBoostPredictor implements BasePredictor {
     private Integer numberOfColumns;
     private Integer numberOfRows;
 
+    private Integer numberOfRepeats;
+
     private String modelFilename;
 
     private Predictor predictor;
@@ -26,10 +28,11 @@ public class XGBoostPredictor implements BasePredictor {
 
     private List<PredictorResult> results = new ArrayList<>();
 
-    XGBoostPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
+    XGBoostPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows, Integer numberOfRepeats) {
         this.method = method;
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
+        this.numberOfRepeats = numberOfRepeats;
         this.modelFilename = String.format("%s.benchmark.%s.xgb", method.getName(), this.numberOfColumns);
     }
 
@@ -50,7 +53,6 @@ public class XGBoostPredictor implements BasePredictor {
     @Override
     public List<PredictorResult> predict() {
 
-        int numberOfRepeats = 100;
         Random random = new Random();
 
         FVec featureVector;

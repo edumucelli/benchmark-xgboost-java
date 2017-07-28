@@ -20,6 +20,8 @@ class PMMLPredictor implements BasePredictor {
     private Integer numberOfColumns;
     private Integer numberOfRows;
 
+    private Integer numberOfRepeats;
+
     private Utils.Method method;
     private String modelFilename;
 
@@ -29,10 +31,11 @@ class PMMLPredictor implements BasePredictor {
 
     private List<PredictorResult> results = new ArrayList<>();
 
-    PMMLPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
+    PMMLPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows, Integer numberOfRepeats) {
+        this.method = method;
         this.numberOfColumns = numberOfColumns;
         this.numberOfRows = numberOfRows;
-        this.method = method;
+        this.numberOfRepeats = numberOfRepeats;
         this.modelFilename = String.format("%s.benchmark.%s.pmml", this.method.getName(), this.numberOfColumns);
     }
 
@@ -62,8 +65,6 @@ class PMMLPredictor implements BasePredictor {
         Map<FieldName, ?> predictions;
         List<InputField> inputFields;
         Map<FieldName, FieldValue> arguments;
-
-        int numberOfRepeats = 100;
 
         inputFields = evaluator.getInputFields();
 

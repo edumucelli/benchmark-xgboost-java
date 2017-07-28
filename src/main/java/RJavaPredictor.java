@@ -47,6 +47,8 @@ public class RJavaPredictor implements BasePredictor {
     private Integer numberOfColumns;
     private Integer numberOfRows;
 
+    private Integer numberOfRepeats;
+
     private Utils.Method method;
     private String modelFilename;
 
@@ -54,11 +56,12 @@ public class RJavaPredictor implements BasePredictor {
 
     private List<PredictorResult> results = new ArrayList<>();
 
-    RJavaPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows) {
+    RJavaPredictor(Utils.Method method, Integer numberOfColumns, Integer numberOfRows, Integer numberOfRepeats) {
         this.numberOfRows = numberOfRows;
+        this.numberOfColumns = numberOfColumns;
+        this.numberOfRepeats = numberOfRepeats;
         this.method = method;
         this.modelFilename = String.format("%s.benchmark.%s.r", method.getName(), numberOfColumns);
-        this.numberOfColumns = numberOfColumns;
 
         if (engine == null) {
             engine = new Rengine(new String[] {"--no-save"}, false, new LoggingConsole(log));
@@ -104,19 +107,20 @@ public class RJavaPredictor implements BasePredictor {
         engine.assign("NUMBER_OF_ROWS", new int[]{numberOfRows});
         engine.assign("NUMBER_OF_FEATURES", new int[]{numberOfColumns});
 
-        int numberOfRepeats = 100;
-
         for (int j = 0; j < numberOfRepeats; j++) {
             engine.eval("data = data.frame(SELECTED = sample(c(\"true\", \"false\"), NUMBER_OF_ROWS, replace=TRUE, prob=c(0.5, 0.5)), matrix(rnorm(20), nrow=NUMBER_OF_ROWS, ncol=NUMBER_OF_FEATURES))");
             engine.eval("data$SELECTED = as.factor(data$SELECTED)");
 
             Instant start = Instant.now();
             REXP dataFrame = engine.eval("as.data.frame(predict(model_fit, newdata = data, type=\"prob\"))");
+//            REXP dataFrame = engine.eval("predict.glm(model_fit, data)");
             Instant end = Instant.now();
             long repeatDuration = Duration.between(start, end).toMillis();
 
+            // log.info(dataFrame.toString());
+
             String label = String.format("%s (%s)", NAME, method.getName().toUpperCase());
-            log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, label));
+//            log.info(String.format("%s, %s, %s, %s", numberOfRows, numberOfColumns, repeatDuration, label));
 
             PredictorResult result = new PredictorResult(numberOfRows, numberOfColumns, repeatDuration, label);
             results.add(result);
