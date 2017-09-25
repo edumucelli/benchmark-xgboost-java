@@ -1,0 +1,1199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
+	<Header>
+		<Application name="JPMML-R" version="1.2.14"/>
+		<Timestamp>2017-05-10T17:16:55Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="y" optype="categorical" dataType="string">
+			<Value value="0"/>
+			<Value value="1"/>
+		</DataField>
+		<DataField name="X9" optype="continuous" dataType="double"/>
+		<DataField name="X29" optype="continuous" dataType="double"/>
+		<DataField name="X48" optype="continuous" dataType="double"/>
+		<DataField name="X59" optype="continuous" dataType="double"/>
+		<DataField name="X64" optype="continuous" dataType="double"/>
+		<DataField name="X77" optype="continuous" dataType="double"/>
+		<DataField name="X115" optype="continuous" dataType="double"/>
+		<DataField name="X150" optype="continuous" dataType="double"/>
+		<DataField name="X195" optype="continuous" dataType="double"/>
+		<DataField name="X239" optype="continuous" dataType="double"/>
+		<DataField name="X272" optype="continuous" dataType="double"/>
+		<DataField name="X349" optype="continuous" dataType="double"/>
+		<DataField name="X353" optype="continuous" dataType="double"/>
+		<DataField name="X371" optype="continuous" dataType="double"/>
+		<DataField name="X395" optype="continuous" dataType="double"/>
+		<DataField name="X408" optype="continuous" dataType="double"/>
+		<DataField name="X434" optype="continuous" dataType="double"/>
+		<DataField name="X470" optype="continuous" dataType="double"/>
+		<DataField name="X482" optype="continuous" dataType="double"/>
+		<DataField name="X570" optype="continuous" dataType="double"/>
+		<DataField name="X589" optype="continuous" dataType="double"/>
+		<DataField name="X612" optype="continuous" dataType="double"/>
+		<DataField name="X619" optype="continuous" dataType="double"/>
+		<DataField name="X620" optype="continuous" dataType="double"/>
+		<DataField name="X640" optype="continuous" dataType="double"/>
+		<DataField name="X645" optype="continuous" dataType="double"/>
+		<DataField name="X659" optype="continuous" dataType="double"/>
+		<DataField name="X710" optype="continuous" dataType="double"/>
+		<DataField name="X711" optype="continuous" dataType="double"/>
+		<DataField name="X732" optype="continuous" dataType="double"/>
+		<DataField name="X738" optype="continuous" dataType="double"/>
+		<DataField name="X774" optype="continuous" dataType="double"/>
+		<DataField name="X798" optype="continuous" dataType="double"/>
+		<DataField name="X840" optype="continuous" dataType="double"/>
+		<DataField name="X841" optype="continuous" dataType="double"/>
+		<DataField name="X850" optype="continuous" dataType="double"/>
+		<DataField name="X860" optype="continuous" dataType="double"/>
+		<DataField name="X877" optype="continuous" dataType="double"/>
+		<DataField name="X889" optype="continuous" dataType="double"/>
+		<DataField name="X891" optype="continuous" dataType="double"/>
+		<DataField name="X931" optype="continuous" dataType="double"/>
+		<DataField name="X934" optype="continuous" dataType="double"/>
+		<DataField name="X950" optype="continuous" dataType="double"/>
+		<DataField name="X963" optype="continuous" dataType="double"/>
+		<DataField name="X971" optype="continuous" dataType="double"/>
+		<DataField name="X980" optype="continuous" dataType="double"/>
+		<DataField name="X986" optype="continuous" dataType="double"/>
+		<DataField name="X991" optype="continuous" dataType="double"/>
+		<DataField name="X994" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<MiningModel functionName="classification">
+		<MiningSchema>
+			<MiningField name="y" usageType="target"/>
+			<MiningField name="X589"/>
+			<MiningField name="X774"/>
+			<MiningField name="X395"/>
+			<MiningField name="X711"/>
+			<MiningField name="X482"/>
+			<MiningField name="X738"/>
+			<MiningField name="X272"/>
+			<MiningField name="X840"/>
+			<MiningField name="X889"/>
+			<MiningField name="X980"/>
+			<MiningField name="X59"/>
+			<MiningField name="X640"/>
+			<MiningField name="X850"/>
+			<MiningField name="X891"/>
+			<MiningField name="X64"/>
+			<MiningField name="X620"/>
+			<MiningField name="X29"/>
+			<MiningField name="X986"/>
+			<MiningField name="X994"/>
+			<MiningField name="X48"/>
+			<MiningField name="X9"/>
+			<MiningField name="X612"/>
+			<MiningField name="X991"/>
+			<MiningField name="X353"/>
+			<MiningField name="X408"/>
+			<MiningField name="X798"/>
+			<MiningField name="X371"/>
+			<MiningField name="X115"/>
+			<MiningField name="X239"/>
+			<MiningField name="X963"/>
+			<MiningField name="X659"/>
+			<MiningField name="X877"/>
+			<MiningField name="X841"/>
+			<MiningField name="X619"/>
+			<MiningField name="X732"/>
+			<MiningField name="X710"/>
+			<MiningField name="X77"/>
+			<MiningField name="X931"/>
+			<MiningField name="X950"/>
+			<MiningField name="X860"/>
+			<MiningField name="X934"/>
+			<MiningField name="X195"/>
+			<MiningField name="X570"/>
+			<MiningField name="X971"/>
+			<MiningField name="X434"/>
+			<MiningField name="X645"/>
+			<MiningField name="X470"/>
+			<MiningField name="X349"/>
+			<MiningField name="X150"/>
+		</MiningSchema>
+		<Segmentation multipleModelMethod="modelChain">
+			<Segment id="1">
+				<True/>
+				<MiningModel functionName="regression">
+					<MiningSchema>
+						<MiningField name="X589"/>
+						<MiningField name="X774"/>
+						<MiningField name="X395"/>
+						<MiningField name="X711"/>
+						<MiningField name="X482"/>
+						<MiningField name="X738"/>
+						<MiningField name="X272"/>
+						<MiningField name="X840"/>
+						<MiningField name="X889"/>
+						<MiningField name="X980"/>
+						<MiningField name="X59"/>
+						<MiningField name="X640"/>
+						<MiningField name="X850"/>
+						<MiningField name="X891"/>
+						<MiningField name="X64"/>
+						<MiningField name="X620"/>
+						<MiningField name="X29"/>
+						<MiningField name="X986"/>
+						<MiningField name="X994"/>
+						<MiningField name="X48"/>
+						<MiningField name="X9"/>
+						<MiningField name="X612"/>
+						<MiningField name="X991"/>
+						<MiningField name="X353"/>
+						<MiningField name="X408"/>
+						<MiningField name="X798"/>
+						<MiningField name="X371"/>
+						<MiningField name="X115"/>
+						<MiningField name="X239"/>
+						<MiningField name="X963"/>
+						<MiningField name="X659"/>
+						<MiningField name="X877"/>
+						<MiningField name="X841"/>
+						<MiningField name="X619"/>
+						<MiningField name="X732"/>
+						<MiningField name="X710"/>
+						<MiningField name="X77"/>
+						<MiningField name="X931"/>
+						<MiningField name="X950"/>
+						<MiningField name="X860"/>
+						<MiningField name="X934"/>
+						<MiningField name="X195"/>
+						<MiningField name="X570"/>
+						<MiningField name="X971"/>
+						<MiningField name="X434"/>
+						<MiningField name="X645"/>
+						<MiningField name="X470"/>
+						<MiningField name="X349"/>
+						<MiningField name="X150"/>
+					</MiningSchema>
+					<Output>
+						<OutputField name="gbmValue" optype="continuous" dataType="double" feature="predictedValue" isFinalResult="false"/>
+					</Output>
+					<Targets>
+						<Target rescaleConstant="-0.9148911515197318"/>
+					</Targets>
+					<Segmentation multipleModelMethod="sum">
+						<Segment id="1">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X29"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.002285296402943279">
+										<SimplePredicate field="X29" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.1758835724680129">
+										<SimplePredicate field="X29" operator="lessThan" value="-1.668163425845656"/>
+									</Node>
+									<Node id="3" score="-0.009967125241607592">
+										<SimplePredicate field="X29" operator="greaterOrEqual" value="-1.668163425845656"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="2">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X980"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.0043630404853296076">
+										<SimplePredicate field="X980" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.10810773952335338">
+										<SimplePredicate field="X980" operator="lessThan" value="-1.3779902673072746"/>
+									</Node>
+									<Node id="3" score="-0.006823610961901906">
+										<SimplePredicate field="X980" operator="greaterOrEqual" value="-1.3779902673072746"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="3">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X950"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.005666469830718491">
+										<SimplePredicate field="X950" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.016502046008407507">
+										<SimplePredicate field="X950" operator="lessThan" value="1.4525531537917673"/>
+									</Node>
+									<Node id="3" score="0.11047736232388564">
+										<SimplePredicate field="X950" operator="greaterOrEqual" value="1.4525531537917673"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="4">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X620"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="3.571837702422935E-4">
+										<SimplePredicate field="X620" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.0065707522940943565">
+										<SimplePredicate field="X620" operator="lessThan" value="1.6832197010294823"/>
+									</Node>
+									<Node id="3" score="0.18587191615970147">
+										<SimplePredicate field="X620" operator="greaterOrEqual" value="1.6832197010294823"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="5">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X850"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.006271583194978118">
+										<SimplePredicate field="X850" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.01285713325856066">
+										<SimplePredicate field="X850" operator="lessThan" value="1.9773239581086068"/>
+									</Node>
+									<Node id="3" score="0.17711065703708964">
+										<SimplePredicate field="X850" operator="greaterOrEqual" value="1.9773239581086068"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="6">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X877"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.004378336617586528">
+										<SimplePredicate field="X877" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.18605432216573464">
+										<SimplePredicate field="X877" operator="lessThan" value="-1.84246064286391"/>
+									</Node>
+									<Node id="3" score="-0.011763536681205632">
+										<SimplePredicate field="X877" operator="greaterOrEqual" value="-1.84246064286391"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="7">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X353"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.0060655383479962625">
+										<SimplePredicate field="X353" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.08270235343376747">
+										<SimplePredicate field="X353" operator="lessThan" value="-0.995455872839384"/>
+									</Node>
+									<Node id="3" score="-0.010757177158636439">
+										<SimplePredicate field="X353" operator="greaterOrEqual" value="-0.995455872839384"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="8">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X963"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.004662736052320634">
+										<SimplePredicate field="X963" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.05614225660187594">
+										<SimplePredicate field="X963" operator="lessThan" value="-0.4406164349417252"/>
+									</Node>
+									<Node id="3" score="0.0194147696450252">
+										<SimplePredicate field="X963" operator="greaterOrEqual" value="-0.4406164349417252"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="9">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X77"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="4.045914978982173E-4">
+										<SimplePredicate field="X77" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.1517864067089248">
+										<SimplePredicate field="X77" operator="lessThan" value="-1.6651259187946652"/>
+									</Node>
+									<Node id="3" score="-0.00678393045346338">
+										<SimplePredicate field="X77" operator="greaterOrEqual" value="-1.6651259187946652"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="10">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X48"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.005329866068356461">
+										<SimplePredicate field="X48" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.0497376466055003">
+										<SimplePredicate field="X48" operator="lessThan" value="-0.43657652740596775"/>
+									</Node>
+									<Node id="3" score="0.01823344605339333">
+										<SimplePredicate field="X48" operator="greaterOrEqual" value="-0.43657652740596775"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="11">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X841"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.002034316039148234">
+										<SimplePredicate field="X841" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.013788433667157155">
+										<SimplePredicate field="X841" operator="lessThan" value="0.9950574101774114"/>
+									</Node>
+									<Node id="3" score="-0.09816498406613569">
+										<SimplePredicate field="X841" operator="greaterOrEqual" value="0.9950574101774114"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="12">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X434"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="1.3641147831569924E-4">
+										<SimplePredicate field="X434" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.03773304541679328">
+										<SimplePredicate field="X434" operator="lessThan" value="0.01873465889217503"/>
+									</Node>
+									<Node id="3" score="0.038616666065281274">
+										<SimplePredicate field="X434" operator="greaterOrEqual" value="0.01873465889217503"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="13">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X59"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-7.027482436444473E-4">
+										<SimplePredicate field="X59" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.040687380473606975">
+										<SimplePredicate field="X59" operator="lessThan" value="-0.16759315288133964"/>
+									</Node>
+									<Node id="3" score="0.03004015295203429">
+										<SimplePredicate field="X59" operator="greaterOrEqual" value="-0.16759315288133964"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="14">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X408"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.0028226430796593413">
+										<SimplePredicate field="X408" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.011022540938042474">
+										<SimplePredicate field="X408" operator="lessThan" value="1.0366219140216806"/>
+									</Node>
+									<Node id="3" score="0.09828154341223501">
+										<SimplePredicate field="X408" operator="greaterOrEqual" value="1.0366219140216806"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="15">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X9"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.0011396964005819447">
+										<SimplePredicate field="X9" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.01959656274219133">
+										<SimplePredicate field="X9" operator="lessThan" value="0.7573446569094168"/>
+									</Node>
+									<Node id="3" score="-0.06329355555844961">
+										<SimplePredicate field="X9" operator="greaterOrEqual" value="0.7573446569094168"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="16">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X738"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.009857470803568807">
+										<SimplePredicate field="X738" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.05332403574396775">
+										<SimplePredicate field="X738" operator="lessThan" value="-0.5860213446668624"/>
+									</Node>
+									<Node id="3" score="0.03314700423897462">
+										<SimplePredicate field="X738" operator="greaterOrEqual" value="-0.5860213446668624"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="17">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X150"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-3.1962472713773594E-4">
+										<SimplePredicate field="X150" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.0066527461976142975">
+										<SimplePredicate field="X150" operator="lessThan" value="1.7758789914423656"/>
+									</Node>
+									<Node id="3" score="0.17603345006613266">
+										<SimplePredicate field="X150" operator="greaterOrEqual" value="1.7758789914423656"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="18">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X272"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.0026311530800292703">
+										<SimplePredicate field="X272" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.16178332188944955">
+										<SimplePredicate field="X272" operator="lessThan" value="-1.7981439454558545"/>
+									</Node>
+									<Node id="3" score="-0.004461979791699768">
+										<SimplePredicate field="X272" operator="greaterOrEqual" value="-1.7981439454558545"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="19">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X889"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.010522513004504406">
+										<SimplePredicate field="X889" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.019660001850063127">
+										<SimplePredicate field="X889" operator="lessThan" value="1.5493421845628812"/>
+									</Node>
+									<Node id="3" score="0.11471483411403577">
+										<SimplePredicate field="X889" operator="greaterOrEqual" value="1.5493421845628812"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="20">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X659"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.00592131079298067">
+										<SimplePredicate field="X659" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.02455272146235845">
+										<SimplePredicate field="X659" operator="lessThan" value="0.7457901523926123"/>
+									</Node>
+									<Node id="3" score="-0.06445083269072012">
+										<SimplePredicate field="X659" operator="greaterOrEqual" value="0.7457901523926123"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="21">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X971"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.010543823726096595">
+										<SimplePredicate field="X971" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.020365482094532643">
+										<SimplePredicate field="X971" operator="lessThan" value="1.3735600728961752"/>
+									</Node>
+									<Node id="3" score="0.1111745853398787">
+										<SimplePredicate field="X971" operator="greaterOrEqual" value="1.3735600728961752"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="22">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X115"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.006643177894970445">
+										<SimplePredicate field="X115" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.05562672086067016">
+										<SimplePredicate field="X115" operator="lessThan" value="-0.36414862404908327"/>
+									</Node>
+									<Node id="3" score="-0.019655363615302762">
+										<SimplePredicate field="X115" operator="greaterOrEqual" value="-0.36414862404908327"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="23">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X934"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.009096690509585082">
+										<SimplePredicate field="X934" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.05736448847006266">
+										<SimplePredicate field="X934" operator="lessThan" value="-0.7488570431103314"/>
+									</Node>
+									<Node id="3" score="-0.028576691244999078">
+										<SimplePredicate field="X934" operator="greaterOrEqual" value="-0.7488570431103314"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="24">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X645"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.0019495429588425152">
+										<SimplePredicate field="X645" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.029051325068352285">
+										<SimplePredicate field="X645" operator="lessThan" value="0.435883763774251"/>
+									</Node>
+									<Node id="3" score="0.04540412028744378">
+										<SimplePredicate field="X645" operator="greaterOrEqual" value="0.435883763774251"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="25">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X986"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="7.520619355962709E-4">
+										<SimplePredicate field="X986" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.046341919334623255">
+										<SimplePredicate field="X986" operator="lessThan" value="-0.5034818998842916"/>
+									</Node>
+									<Node id="3" score="-0.024012798873751726">
+										<SimplePredicate field="X986" operator="greaterOrEqual" value="-0.5034818998842916"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="26">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X640"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.00169078945968789">
+										<SimplePredicate field="X640" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.007451136078902638">
+										<SimplePredicate field="X640" operator="lessThan" value="1.5071610154359134"/>
+									</Node>
+									<Node id="3" score="0.13539145046157436">
+										<SimplePredicate field="X640" operator="greaterOrEqual" value="1.5071610154359134"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="27">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X798"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.008989129781880689">
+										<SimplePredicate field="X798" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.004117930530869441">
+										<SimplePredicate field="X798" operator="lessThan" value="2.133457850390434"/>
+									</Node>
+									<Node id="3" score="0.26507503326361476">
+										<SimplePredicate field="X798" operator="greaterOrEqual" value="2.133457850390434"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="28">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X711"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.001116188983044371">
+										<SimplePredicate field="X711" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.050647903984562086">
+										<SimplePredicate field="X711" operator="lessThan" value="-0.5757288691991224"/>
+									</Node>
+									<Node id="3" score="-0.023441923736248683">
+										<SimplePredicate field="X711" operator="greaterOrEqual" value="-0.5757288691991224"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="29">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X371"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.007105651534790399">
+										<SimplePredicate field="X371" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.04153474226147725">
+										<SimplePredicate field="X371" operator="lessThan" value="-0.0958307924651157"/>
+									</Node>
+									<Node id="3" score="0.02367186896330845">
+										<SimplePredicate field="X371" operator="greaterOrEqual" value="-0.0958307924651157"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="30">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X470"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="6.849119142951859E-4">
+										<SimplePredicate field="X470" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.005987299414901326">
+										<SimplePredicate field="X470" operator="lessThan" value="1.6948889537434715"/>
+									</Node>
+									<Node id="3" score="0.16656989013328433">
+										<SimplePredicate field="X470" operator="greaterOrEqual" value="1.6948889537434715"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="31">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X710"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.0033029064297383087">
+										<SimplePredicate field="X710" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.0015025476073441443">
+										<SimplePredicate field="X710" operator="lessThan" value="2.1522999870426265"/>
+									</Node>
+									<Node id="3" score="0.25593249009350155">
+										<SimplePredicate field="X710" operator="greaterOrEqual" value="2.1522999870426265"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="32">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X991"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.004327706314515374">
+										<SimplePredicate field="X991" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.06669181312353269">
+										<SimplePredicate field="X991" operator="lessThan" value="-0.8489613247080225"/>
+									</Node>
+									<Node id="3" score="-0.011655054726991576">
+										<SimplePredicate field="X991" operator="greaterOrEqual" value="-0.8489613247080225"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="33">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X612"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="3.9915421847308043E-4">
+										<SimplePredicate field="X612" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.0690228769357346">
+										<SimplePredicate field="X612" operator="lessThan" value="-0.7991708055413551"/>
+									</Node>
+									<Node id="3" score="0.018483885023350712">
+										<SimplePredicate field="X612" operator="greaterOrEqual" value="-0.7991708055413551"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="34">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X395"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.01562393191493795">
+										<SimplePredicate field="X395" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.005728576667830589">
+										<SimplePredicate field="X395" operator="lessThan" value="0.6271873234328955"/>
+									</Node>
+									<Node id="3" score="0.07089525795932924">
+										<SimplePredicate field="X395" operator="greaterOrEqual" value="0.6271873234328955"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="35">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X994"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.0011686929350984542">
+										<SimplePredicate field="X994" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.05734566945662113">
+										<SimplePredicate field="X994" operator="lessThan" value="-0.6758263076963127"/>
+									</Node>
+									<Node id="3" score="0.02126017455670351">
+										<SimplePredicate field="X994" operator="greaterOrEqual" value="-0.6758263076963127"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="36">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X589"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.003415584114029291">
+										<SimplePredicate field="X589" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.010135326781487947">
+										<SimplePredicate field="X589" operator="lessThan" value="1.5710028428901168"/>
+									</Node>
+									<Node id="3" score="0.13809429088304123">
+										<SimplePredicate field="X589" operator="greaterOrEqual" value="1.5710028428901168"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="37">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X570"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.006830053002801502">
+										<SimplePredicate field="X570" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.003879675828258219">
+										<SimplePredicate field="X570" operator="lessThan" value="1.3431397616732244"/>
+									</Node>
+									<Node id="3" score="0.11424233333784165">
+										<SimplePredicate field="X570" operator="greaterOrEqual" value="1.3431397616732244"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="38">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X619"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.002334791272186321">
+										<SimplePredicate field="X619" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.007117161570215049">
+										<SimplePredicate field="X619" operator="lessThan" value="2.0191787309661287"/>
+									</Node>
+									<Node id="3" score="0.2170564461498816">
+										<SimplePredicate field="X619" operator="greaterOrEqual" value="2.0191787309661287"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="39">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X950"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="2.972994062040755E-5">
+										<SimplePredicate field="X950" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.005555146677364186">
+										<SimplePredicate field="X950" operator="lessThan" value="1.8515795961736368"/>
+									</Node>
+									<Node id="3" score="0.14958031493331897">
+										<SimplePredicate field="X950" operator="greaterOrEqual" value="1.8515795961736368"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="40">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X891"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.0124987216465054">
+										<SimplePredicate field="X891" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.044270481107677256">
+										<SimplePredicate field="X891" operator="lessThan" value="-0.5319804508109109"/>
+									</Node>
+									<Node id="3" score="-0.0363675909863322">
+										<SimplePredicate field="X891" operator="greaterOrEqual" value="-0.5319804508109109"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="41">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X931"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.0013483655926573117">
+										<SimplePredicate field="X931" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.14544206959080172">
+										<SimplePredicate field="X931" operator="lessThan" value="-1.6477575195887901"/>
+									</Node>
+									<Node id="3" score="-0.008749564005268691">
+										<SimplePredicate field="X931" operator="greaterOrEqual" value="-1.6477575195887901"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="42">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X860"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.004262864064262429">
+										<SimplePredicate field="X860" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.02177060268288925">
+										<SimplePredicate field="X860" operator="lessThan" value="0.36310669966929077"/>
+									</Node>
+									<Node id="3" score="0.05246932150100336">
+										<SimplePredicate field="X860" operator="greaterOrEqual" value="0.36310669966929077"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="43">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X64"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.0023448693920279182">
+										<SimplePredicate field="X64" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.02509725494935879">
+										<SimplePredicate field="X64" operator="lessThan" value="0.4856682463426775"/>
+									</Node>
+									<Node id="3" score="0.04182152610161436">
+										<SimplePredicate field="X64" operator="greaterOrEqual" value="0.4856682463426775"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="44">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X840"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.0030884719038905125">
+										<SimplePredicate field="X840" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.17596759795505243">
+										<SimplePredicate field="X840" operator="lessThan" value="-1.884467125161409"/>
+									</Node>
+									<Node id="3" score="-0.009007680824847304">
+										<SimplePredicate field="X840" operator="greaterOrEqual" value="-1.884467125161409"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="45">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X774"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="-0.0040923156586426005">
+										<SimplePredicate field="X774" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.014675285920254959">
+										<SimplePredicate field="X774" operator="lessThan" value="0.756997418365698"/>
+									</Node>
+									<Node id="3" score="-0.07613568946150742">
+										<SimplePredicate field="X774" operator="greaterOrEqual" value="0.756997418365698"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="46">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X732"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="1.4672797011838271E-4">
+										<SimplePredicate field="X732" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.07373173870077546">
+										<SimplePredicate field="X732" operator="lessThan" value="-0.7334615909048231"/>
+									</Node>
+									<Node id="3" score="0.021146429112872456">
+										<SimplePredicate field="X732" operator="greaterOrEqual" value="-0.7334615909048231"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="47">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X195"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="2.712312761500869E-4">
+										<SimplePredicate field="X195" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.10072089752055363">
+										<SimplePredicate field="X195" operator="lessThan" value="-1.3808672691533987"/>
+									</Node>
+									<Node id="3" score="0.011492578920228277">
+										<SimplePredicate field="X195" operator="greaterOrEqual" value="-1.3808672691533987"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="48">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X239"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.004567054753132386">
+										<SimplePredicate field="X239" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.05067736148152727">
+										<SimplePredicate field="X239" operator="lessThan" value="-0.5522919326517903"/>
+									</Node>
+									<Node id="3" score="0.025207825653994233">
+										<SimplePredicate field="X239" operator="greaterOrEqual" value="-0.5522919326517903"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="49">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X482"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.005338980438884134">
+										<SimplePredicate field="X482" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="-0.02987887511910638">
+										<SimplePredicate field="X482" operator="lessThan" value="-0.11690649582421378"/>
+									</Node>
+									<Node id="3" score="0.03682160889223929">
+										<SimplePredicate field="X482" operator="greaterOrEqual" value="-0.11690649582421378"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+						<Segment id="50">
+							<True/>
+							<TreeModel functionName="regression" splitCharacteristic="multiSplit">
+								<MiningSchema>
+									<MiningField name="X349"/>
+								</MiningSchema>
+								<Node id="1">
+									<True/>
+									<Node id="4" score="0.003164627840210882">
+										<SimplePredicate field="X349" operator="isMissing"/>
+									</Node>
+									<Node id="2" score="0.28462142227429055">
+										<SimplePredicate field="X349" operator="lessThan" value="-2.1265528514903353"/>
+									</Node>
+									<Node id="3" score="-0.001800010324840726">
+										<SimplePredicate field="X349" operator="greaterOrEqual" value="-2.1265528514903353"/>
+									</Node>
+								</Node>
+							</TreeModel>
+						</Segment>
+					</Segmentation>
+				</MiningModel>
+			</Segment>
+			<Segment id="2">
+				<True/>
+				<RegressionModel functionName="classification" normalizationMethod="softmax">
+					<MiningSchema>
+						<MiningField name="y" usageType="target"/>
+						<MiningField name="gbmValue"/>
+					</MiningSchema>
+					<Output>
+						<OutputField name="probability_0" optype="continuous" dataType="double" feature="probability" value="0"/>
+						<OutputField name="probability_1" optype="continuous" dataType="double" feature="probability" value="1"/>
+					</Output>
+					<RegressionTable intercept="0.0" targetCategory="1">
+						<NumericPredictor name="gbmValue" coefficient="1.0"/>
+					</RegressionTable>
+					<RegressionTable intercept="0.0" targetCategory="0"/>
+				</RegressionModel>
+			</Segment>
+		</Segmentation>
+	</MiningModel>
+</PMML>
