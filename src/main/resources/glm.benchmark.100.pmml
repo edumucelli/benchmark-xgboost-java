@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" version="4.3">
+	<Header>
+		<Application name="JPMML-R" version="1.2.16"/>
+		<Timestamp>2017-05-09T12:12:50Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name=".outcome" optype="categorical" dataType="string">
+			<Value value="false"/>
+			<Value value="true"/>
+		</DataField>
+		<DataField name="X1" optype="continuous" dataType="double"/>
+		<DataField name="X2" optype="continuous" dataType="double"/>
+		<DataField name="X3" optype="continuous" dataType="double"/>
+		<DataField name="X4" optype="continuous" dataType="double"/>
+		<DataField name="X5" optype="continuous" dataType="double"/>
+		<DataField name="X6" optype="continuous" dataType="double"/>
+		<DataField name="X7" optype="continuous" dataType="double"/>
+		<DataField name="X8" optype="continuous" dataType="double"/>
+		<DataField name="X9" optype="continuous" dataType="double"/>
+		<DataField name="X10" optype="continuous" dataType="double"/>
+		<DataField name="X11" optype="continuous" dataType="double"/>
+		<DataField name="X12" optype="continuous" dataType="double"/>
+		<DataField name="X13" optype="continuous" dataType="double"/>
+		<DataField name="X14" optype="continuous" dataType="double"/>
+		<DataField name="X15" optype="continuous" dataType="double"/>
+		<DataField name="X16" optype="continuous" dataType="double"/>
+		<DataField name="X17" optype="continuous" dataType="double"/>
+		<DataField name="X18" optype="continuous" dataType="double"/>
+		<DataField name="X19" optype="continuous" dataType="double"/>
+		<DataField name="X20" optype="continuous" dataType="double"/>
+		<DataField name="X21" optype="continuous" dataType="double"/>
+		<DataField name="X22" optype="continuous" dataType="double"/>
+		<DataField name="X23" optype="continuous" dataType="double"/>
+		<DataField name="X24" optype="continuous" dataType="double"/>
+		<DataField name="X25" optype="continuous" dataType="double"/>
+		<DataField name="X26" optype="continuous" dataType="double"/>
+		<DataField name="X27" optype="continuous" dataType="double"/>
+		<DataField name="X28" optype="continuous" dataType="double"/>
+		<DataField name="X29" optype="continuous" dataType="double"/>
+		<DataField name="X30" optype="continuous" dataType="double"/>
+		<DataField name="X31" optype="continuous" dataType="double"/>
+		<DataField name="X32" optype="continuous" dataType="double"/>
+		<DataField name="X33" optype="continuous" dataType="double"/>
+		<DataField name="X34" optype="continuous" dataType="double"/>
+		<DataField name="X35" optype="continuous" dataType="double"/>
+		<DataField name="X36" optype="continuous" dataType="double"/>
+		<DataField name="X37" optype="continuous" dataType="double"/>
+		<DataField name="X38" optype="continuous" dataType="double"/>
+		<DataField name="X39" optype="continuous" dataType="double"/>
+		<DataField name="X40" optype="continuous" dataType="double"/>
+		<DataField name="X41" optype="continuous" dataType="double"/>
+		<DataField name="X42" optype="continuous" dataType="double"/>
+		<DataField name="X43" optype="continuous" dataType="double"/>
+		<DataField name="X44" optype="continuous" dataType="double"/>
+		<DataField name="X45" optype="continuous" dataType="double"/>
+		<DataField name="X46" optype="continuous" dataType="double"/>
+		<DataField name="X47" optype="continuous" dataType="double"/>
+		<DataField name="X48" optype="continuous" dataType="double"/>
+		<DataField name="X49" optype="continuous" dataType="double"/>
+		<DataField name="X50" optype="continuous" dataType="double"/>
+		<DataField name="X51" optype="continuous" dataType="double"/>
+		<DataField name="X52" optype="continuous" dataType="double"/>
+		<DataField name="X53" optype="continuous" dataType="double"/>
+		<DataField name="X54" optype="continuous" dataType="double"/>
+		<DataField name="X55" optype="continuous" dataType="double"/>
+		<DataField name="X56" optype="continuous" dataType="double"/>
+		<DataField name="X57" optype="continuous" dataType="double"/>
+		<DataField name="X58" optype="continuous" dataType="double"/>
+		<DataField name="X59" optype="continuous" dataType="double"/>
+		<DataField name="X60" optype="continuous" dataType="double"/>
+		<DataField name="X61" optype="continuous" dataType="double"/>
+		<DataField name="X62" optype="continuous" dataType="double"/>
+		<DataField name="X63" optype="continuous" dataType="double"/>
+		<DataField name="X64" optype="continuous" dataType="double"/>
+		<DataField name="X65" optype="continuous" dataType="double"/>
+		<DataField name="X66" optype="continuous" dataType="double"/>
+		<DataField name="X67" optype="continuous" dataType="double"/>
+		<DataField name="X68" optype="continuous" dataType="double"/>
+		<DataField name="X69" optype="continuous" dataType="double"/>
+		<DataField name="X70" optype="continuous" dataType="double"/>
+		<DataField name="X71" optype="continuous" dataType="double"/>
+		<DataField name="X72" optype="continuous" dataType="double"/>
+		<DataField name="X73" optype="continuous" dataType="double"/>
+		<DataField name="X74" optype="continuous" dataType="double"/>
+		<DataField name="X75" optype="continuous" dataType="double"/>
+		<DataField name="X76" optype="continuous" dataType="double"/>
+		<DataField name="X77" optype="continuous" dataType="double"/>
+		<DataField name="X78" optype="continuous" dataType="double"/>
+		<DataField name="X79" optype="continuous" dataType="double"/>
+		<DataField name="X80" optype="continuous" dataType="double"/>
+		<DataField name="X81" optype="continuous" dataType="double"/>
+		<DataField name="X82" optype="continuous" dataType="double"/>
+		<DataField name="X83" optype="continuous" dataType="double"/>
+		<DataField name="X84" optype="continuous" dataType="double"/>
+		<DataField name="X85" optype="continuous" dataType="double"/>
+		<DataField name="X86" optype="continuous" dataType="double"/>
+		<DataField name="X87" optype="continuous" dataType="double"/>
+		<DataField name="X88" optype="continuous" dataType="double"/>
+		<DataField name="X89" optype="continuous" dataType="double"/>
+		<DataField name="X90" optype="continuous" dataType="double"/>
+		<DataField name="X91" optype="continuous" dataType="double"/>
+		<DataField name="X92" optype="continuous" dataType="double"/>
+		<DataField name="X93" optype="continuous" dataType="double"/>
+		<DataField name="X94" optype="continuous" dataType="double"/>
+		<DataField name="X95" optype="continuous" dataType="double"/>
+		<DataField name="X96" optype="continuous" dataType="double"/>
+		<DataField name="X97" optype="continuous" dataType="double"/>
+		<DataField name="X98" optype="continuous" dataType="double"/>
+		<DataField name="X99" optype="continuous" dataType="double"/>
+		<DataField name="X100" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<GeneralRegressionModel modelType="generalizedLinear" functionName="classification" linkFunction="logit" distribution="binomial">
+		<MiningSchema>
+			<MiningField name=".outcome" usageType="target"/>
+			<MiningField name="X1"/>
+			<MiningField name="X2"/>
+			<MiningField name="X3"/>
+			<MiningField name="X4"/>
+			<MiningField name="X5"/>
+			<MiningField name="X6"/>
+			<MiningField name="X7"/>
+			<MiningField name="X8"/>
+			<MiningField name="X9"/>
+			<MiningField name="X10"/>
+			<MiningField name="X11"/>
+			<MiningField name="X12"/>
+			<MiningField name="X13"/>
+			<MiningField name="X14"/>
+			<MiningField name="X15"/>
+			<MiningField name="X16"/>
+			<MiningField name="X17"/>
+			<MiningField name="X18"/>
+			<MiningField name="X19"/>
+			<MiningField name="X20"/>
+			<MiningField name="X21"/>
+			<MiningField name="X22"/>
+			<MiningField name="X23"/>
+			<MiningField name="X24"/>
+			<MiningField name="X25"/>
+			<MiningField name="X26"/>
+			<MiningField name="X27"/>
+			<MiningField name="X28"/>
+			<MiningField name="X29"/>
+			<MiningField name="X30"/>
+			<MiningField name="X31"/>
+			<MiningField name="X32"/>
+			<MiningField name="X33"/>
+			<MiningField name="X34"/>
+			<MiningField name="X35"/>
+			<MiningField name="X36"/>
+			<MiningField name="X37"/>
+			<MiningField name="X38"/>
+			<MiningField name="X39"/>
+			<MiningField name="X40"/>
+			<MiningField name="X41"/>
+			<MiningField name="X42"/>
+			<MiningField name="X43"/>
+			<MiningField name="X44"/>
+			<MiningField name="X45"/>
+			<MiningField name="X46"/>
+			<MiningField name="X47"/>
+			<MiningField name="X48"/>
+			<MiningField name="X49"/>
+			<MiningField name="X50"/>
+			<MiningField name="X51"/>
+			<MiningField name="X52"/>
+			<MiningField name="X53"/>
+			<MiningField name="X54"/>
+			<MiningField name="X55"/>
+			<MiningField name="X56"/>
+			<MiningField name="X57"/>
+			<MiningField name="X58"/>
+			<MiningField name="X59"/>
+			<MiningField name="X60"/>
+			<MiningField name="X61"/>
+			<MiningField name="X62"/>
+			<MiningField name="X63"/>
+			<MiningField name="X64"/>
+			<MiningField name="X65"/>
+			<MiningField name="X66"/>
+			<MiningField name="X67"/>
+			<MiningField name="X68"/>
+			<MiningField name="X69"/>
+			<MiningField name="X70"/>
+			<MiningField name="X71"/>
+			<MiningField name="X72"/>
+			<MiningField name="X73"/>
+			<MiningField name="X74"/>
+			<MiningField name="X75"/>
+			<MiningField name="X76"/>
+			<MiningField name="X77"/>
+			<MiningField name="X78"/>
+			<MiningField name="X79"/>
+			<MiningField name="X80"/>
+			<MiningField name="X81"/>
+			<MiningField name="X82"/>
+			<MiningField name="X83"/>
+			<MiningField name="X84"/>
+			<MiningField name="X85"/>
+			<MiningField name="X86"/>
+			<MiningField name="X87"/>
+			<MiningField name="X88"/>
+			<MiningField name="X89"/>
+			<MiningField name="X90"/>
+			<MiningField name="X91"/>
+			<MiningField name="X92"/>
+			<MiningField name="X93"/>
+			<MiningField name="X94"/>
+			<MiningField name="X95"/>
+			<MiningField name="X96"/>
+			<MiningField name="X97"/>
+			<MiningField name="X98"/>
+			<MiningField name="X99"/>
+			<MiningField name="X100"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="probability(false)" optype="continuous" dataType="double" feature="probability" value="false"/>
+			<OutputField name="probability(true)" optype="continuous" dataType="double" feature="probability" value="true"/>
+		</Output>
+		<ParameterList>
+			<Parameter name="p0" label="(intercept)"/>
+			<Parameter name="p1"/>
+			<Parameter name="p2"/>
+			<Parameter name="p3"/>
+			<Parameter name="p4"/>
+			<Parameter name="p5"/>
+			<Parameter name="p6"/>
+			<Parameter name="p7"/>
+			<Parameter name="p8"/>
+			<Parameter name="p9"/>
+			<Parameter name="p10"/>
+			<Parameter name="p11"/>
+			<Parameter name="p12"/>
+			<Parameter name="p13"/>
+			<Parameter name="p14"/>
+			<Parameter name="p15"/>
+			<Parameter name="p16"/>
+			<Parameter name="p17"/>
+			<Parameter name="p18"/>
+			<Parameter name="p19"/>
+			<Parameter name="p20"/>
+			<Parameter name="p21"/>
+			<Parameter name="p22"/>
+			<Parameter name="p23"/>
+			<Parameter name="p24"/>
+			<Parameter name="p25"/>
+			<Parameter name="p26"/>
+			<Parameter name="p27"/>
+			<Parameter name="p28"/>
+			<Parameter name="p29"/>
+			<Parameter name="p30"/>
+			<Parameter name="p31"/>
+			<Parameter name="p32"/>
+			<Parameter name="p33"/>
+			<Parameter name="p34"/>
+			<Parameter name="p35"/>
+			<Parameter name="p36"/>
+			<Parameter name="p37"/>
+			<Parameter name="p38"/>
+			<Parameter name="p39"/>
+			<Parameter name="p40"/>
+			<Parameter name="p41"/>
+			<Parameter name="p42"/>
+			<Parameter name="p43"/>
+			<Parameter name="p44"/>
+			<Parameter name="p45"/>
+			<Parameter name="p46"/>
+			<Parameter name="p47"/>
+			<Parameter name="p48"/>
+			<Parameter name="p49"/>
+			<Parameter name="p50"/>
+			<Parameter name="p51"/>
+			<Parameter name="p52"/>
+			<Parameter name="p53"/>
+			<Parameter name="p54"/>
+			<Parameter name="p55"/>
+			<Parameter name="p56"/>
+			<Parameter name="p57"/>
+			<Parameter name="p58"/>
+			<Parameter name="p59"/>
+			<Parameter name="p60"/>
+			<Parameter name="p61"/>
+			<Parameter name="p62"/>
+			<Parameter name="p63"/>
+			<Parameter name="p64"/>
+			<Parameter name="p65"/>
+			<Parameter name="p66"/>
+			<Parameter name="p67"/>
+			<Parameter name="p68"/>
+			<Parameter name="p69"/>
+			<Parameter name="p70"/>
+			<Parameter name="p71"/>
+			<Parameter name="p72"/>
+			<Parameter name="p73"/>
+			<Parameter name="p74"/>
+			<Parameter name="p75"/>
+			<Parameter name="p76"/>
+			<Parameter name="p77"/>
+			<Parameter name="p78"/>
+			<Parameter name="p79"/>
+			<Parameter name="p80"/>
+			<Parameter name="p81"/>
+			<Parameter name="p82"/>
+			<Parameter name="p83"/>
+			<Parameter name="p84"/>
+			<Parameter name="p85"/>
+			<Parameter name="p86"/>
+			<Parameter name="p87"/>
+			<Parameter name="p88"/>
+			<Parameter name="p89"/>
+			<Parameter name="p90"/>
+			<Parameter name="p91"/>
+			<Parameter name="p92"/>
+			<Parameter name="p93"/>
+			<Parameter name="p94"/>
+			<Parameter name="p95"/>
+			<Parameter name="p96"/>
+			<Parameter name="p97"/>
+			<Parameter name="p98"/>
+			<Parameter name="p99"/>
+			<Parameter name="p100"/>
+		</ParameterList>
+		<CovariateList>
+			<Predictor name="X1"/>
+			<Predictor name="X2"/>
+			<Predictor name="X3"/>
+			<Predictor name="X4"/>
+			<Predictor name="X5"/>
+			<Predictor name="X6"/>
+			<Predictor name="X7"/>
+			<Predictor name="X8"/>
+			<Predictor name="X9"/>
+			<Predictor name="X10"/>
+			<Predictor name="X11"/>
+			<Predictor name="X12"/>
+			<Predictor name="X13"/>
+			<Predictor name="X14"/>
+			<Predictor name="X15"/>
+			<Predictor name="X16"/>
+			<Predictor name="X17"/>
+			<Predictor name="X18"/>
+			<Predictor name="X19"/>
+			<Predictor name="X20"/>
+			<Predictor name="X21"/>
+			<Predictor name="X22"/>
+			<Predictor name="X23"/>
+			<Predictor name="X24"/>
+			<Predictor name="X25"/>
+			<Predictor name="X26"/>
+			<Predictor name="X27"/>
+			<Predictor name="X28"/>
+			<Predictor name="X29"/>
+			<Predictor name="X30"/>
+			<Predictor name="X31"/>
+			<Predictor name="X32"/>
+			<Predictor name="X33"/>
+			<Predictor name="X34"/>
+			<Predictor name="X35"/>
+			<Predictor name="X36"/>
+			<Predictor name="X37"/>
+			<Predictor name="X38"/>
+			<Predictor name="X39"/>
+			<Predictor name="X40"/>
+			<Predictor name="X41"/>
+			<Predictor name="X42"/>
+			<Predictor name="X43"/>
+			<Predictor name="X44"/>
+			<Predictor name="X45"/>
+			<Predictor name="X46"/>
+			<Predictor name="X47"/>
+			<Predictor name="X48"/>
+			<Predictor name="X49"/>
+			<Predictor name="X50"/>
+			<Predictor name="X51"/>
+			<Predictor name="X52"/>
+			<Predictor name="X53"/>
+			<Predictor name="X54"/>
+			<Predictor name="X55"/>
+			<Predictor name="X56"/>
+			<Predictor name="X57"/>
+			<Predictor name="X58"/>
+			<Predictor name="X59"/>
+			<Predictor name="X60"/>
+			<Predictor name="X61"/>
+			<Predictor name="X62"/>
+			<Predictor name="X63"/>
+			<Predictor name="X64"/>
+			<Predictor name="X65"/>
+			<Predictor name="X66"/>
+			<Predictor name="X67"/>
+			<Predictor name="X68"/>
+			<Predictor name="X69"/>
+			<Predictor name="X70"/>
+			<Predictor name="X71"/>
+			<Predictor name="X72"/>
+			<Predictor name="X73"/>
+			<Predictor name="X74"/>
+			<Predictor name="X75"/>
+			<Predictor name="X76"/>
+			<Predictor name="X77"/>
+			<Predictor name="X78"/>
+			<Predictor name="X79"/>
+			<Predictor name="X80"/>
+			<Predictor name="X81"/>
+			<Predictor name="X82"/>
+			<Predictor name="X83"/>
+			<Predictor name="X84"/>
+			<Predictor name="X85"/>
+			<Predictor name="X86"/>
+			<Predictor name="X87"/>
+			<Predictor name="X88"/>
+			<Predictor name="X89"/>
+			<Predictor name="X90"/>
+			<Predictor name="X91"/>
+			<Predictor name="X92"/>
+			<Predictor name="X93"/>
+			<Predictor name="X94"/>
+			<Predictor name="X95"/>
+			<Predictor name="X96"/>
+			<Predictor name="X97"/>
+			<Predictor name="X98"/>
+			<Predictor name="X99"/>
+			<Predictor name="X100"/>
+		</CovariateList>
+		<PPMatrix>
+			<PPCell value="1" predictorName="X1" parameterName="p1"/>
+			<PPCell value="1" predictorName="X2" parameterName="p2"/>
+			<PPCell value="1" predictorName="X3" parameterName="p3"/>
+			<PPCell value="1" predictorName="X4" parameterName="p4"/>
+			<PPCell value="1" predictorName="X5" parameterName="p5"/>
+			<PPCell value="1" predictorName="X6" parameterName="p6"/>
+			<PPCell value="1" predictorName="X7" parameterName="p7"/>
+			<PPCell value="1" predictorName="X8" parameterName="p8"/>
+			<PPCell value="1" predictorName="X9" parameterName="p9"/>
+			<PPCell value="1" predictorName="X10" parameterName="p10"/>
+			<PPCell value="1" predictorName="X11" parameterName="p11"/>
+			<PPCell value="1" predictorName="X12" parameterName="p12"/>
+			<PPCell value="1" predictorName="X13" parameterName="p13"/>
+			<PPCell value="1" predictorName="X14" parameterName="p14"/>
+			<PPCell value="1" predictorName="X15" parameterName="p15"/>
+			<PPCell value="1" predictorName="X16" parameterName="p16"/>
+			<PPCell value="1" predictorName="X17" parameterName="p17"/>
+			<PPCell value="1" predictorName="X18" parameterName="p18"/>
+			<PPCell value="1" predictorName="X19" parameterName="p19"/>
+			<PPCell value="1" predictorName="X20" parameterName="p20"/>
+			<PPCell value="1" predictorName="X21" parameterName="p21"/>
+			<PPCell value="1" predictorName="X22" parameterName="p22"/>
+			<PPCell value="1" predictorName="X23" parameterName="p23"/>
+			<PPCell value="1" predictorName="X24" parameterName="p24"/>
+			<PPCell value="1" predictorName="X25" parameterName="p25"/>
+			<PPCell value="1" predictorName="X26" parameterName="p26"/>
+			<PPCell value="1" predictorName="X27" parameterName="p27"/>
+			<PPCell value="1" predictorName="X28" parameterName="p28"/>
+			<PPCell value="1" predictorName="X29" parameterName="p29"/>
+			<PPCell value="1" predictorName="X30" parameterName="p30"/>
+			<PPCell value="1" predictorName="X31" parameterName="p31"/>
+			<PPCell value="1" predictorName="X32" parameterName="p32"/>
+			<PPCell value="1" predictorName="X33" parameterName="p33"/>
+			<PPCell value="1" predictorName="X34" parameterName="p34"/>
+			<PPCell value="1" predictorName="X35" parameterName="p35"/>
+			<PPCell value="1" predictorName="X36" parameterName="p36"/>
+			<PPCell value="1" predictorName="X37" parameterName="p37"/>
+			<PPCell value="1" predictorName="X38" parameterName="p38"/>
+			<PPCell value="1" predictorName="X39" parameterName="p39"/>
+			<PPCell value="1" predictorName="X40" parameterName="p40"/>
+			<PPCell value="1" predictorName="X41" parameterName="p41"/>
+			<PPCell value="1" predictorName="X42" parameterName="p42"/>
+			<PPCell value="1" predictorName="X43" parameterName="p43"/>
+			<PPCell value="1" predictorName="X44" parameterName="p44"/>
+			<PPCell value="1" predictorName="X45" parameterName="p45"/>
+			<PPCell value="1" predictorName="X46" parameterName="p46"/>
+			<PPCell value="1" predictorName="X47" parameterName="p47"/>
+			<PPCell value="1" predictorName="X48" parameterName="p48"/>
+			<PPCell value="1" predictorName="X49" parameterName="p49"/>
+			<PPCell value="1" predictorName="X50" parameterName="p50"/>
+			<PPCell value="1" predictorName="X51" parameterName="p51"/>
+			<PPCell value="1" predictorName="X52" parameterName="p52"/>
+			<PPCell value="1" predictorName="X53" parameterName="p53"/>
+			<PPCell value="1" predictorName="X54" parameterName="p54"/>
+			<PPCell value="1" predictorName="X55" parameterName="p55"/>
+			<PPCell value="1" predictorName="X56" parameterName="p56"/>
+			<PPCell value="1" predictorName="X57" parameterName="p57"/>
+			<PPCell value="1" predictorName="X58" parameterName="p58"/>
+			<PPCell value="1" predictorName="X59" parameterName="p59"/>
+			<PPCell value="1" predictorName="X60" parameterName="p60"/>
+			<PPCell value="1" predictorName="X61" parameterName="p61"/>
+			<PPCell value="1" predictorName="X62" parameterName="p62"/>
+			<PPCell value="1" predictorName="X63" parameterName="p63"/>
+			<PPCell value="1" predictorName="X64" parameterName="p64"/>
+			<PPCell value="1" predictorName="X65" parameterName="p65"/>
+			<PPCell value="1" predictorName="X66" parameterName="p66"/>
+			<PPCell value="1" predictorName="X67" parameterName="p67"/>
+			<PPCell value="1" predictorName="X68" parameterName="p68"/>
+			<PPCell value="1" predictorName="X69" parameterName="p69"/>
+			<PPCell value="1" predictorName="X70" parameterName="p70"/>
+			<PPCell value="1" predictorName="X71" parameterName="p71"/>
+			<PPCell value="1" predictorName="X72" parameterName="p72"/>
+			<PPCell value="1" predictorName="X73" parameterName="p73"/>
+			<PPCell value="1" predictorName="X74" parameterName="p74"/>
+			<PPCell value="1" predictorName="X75" parameterName="p75"/>
+			<PPCell value="1" predictorName="X76" parameterName="p76"/>
+			<PPCell value="1" predictorName="X77" parameterName="p77"/>
+			<PPCell value="1" predictorName="X78" parameterName="p78"/>
+			<PPCell value="1" predictorName="X79" parameterName="p79"/>
+			<PPCell value="1" predictorName="X80" parameterName="p80"/>
+			<PPCell value="1" predictorName="X81" parameterName="p81"/>
+			<PPCell value="1" predictorName="X82" parameterName="p82"/>
+			<PPCell value="1" predictorName="X83" parameterName="p83"/>
+			<PPCell value="1" predictorName="X84" parameterName="p84"/>
+			<PPCell value="1" predictorName="X85" parameterName="p85"/>
+			<PPCell value="1" predictorName="X86" parameterName="p86"/>
+			<PPCell value="1" predictorName="X87" parameterName="p87"/>
+			<PPCell value="1" predictorName="X88" parameterName="p88"/>
+			<PPCell value="1" predictorName="X89" parameterName="p89"/>
+			<PPCell value="1" predictorName="X90" parameterName="p90"/>
+			<PPCell value="1" predictorName="X91" parameterName="p91"/>
+			<PPCell value="1" predictorName="X92" parameterName="p92"/>
+			<PPCell value="1" predictorName="X93" parameterName="p93"/>
+			<PPCell value="1" predictorName="X94" parameterName="p94"/>
+			<PPCell value="1" predictorName="X95" parameterName="p95"/>
+			<PPCell value="1" predictorName="X96" parameterName="p96"/>
+			<PPCell value="1" predictorName="X97" parameterName="p97"/>
+			<PPCell value="1" predictorName="X98" parameterName="p98"/>
+			<PPCell value="1" predictorName="X99" parameterName="p99"/>
+			<PPCell value="1" predictorName="X100" parameterName="p100"/>
+		</PPMatrix>
+		<ParamMatrix>
+			<PCell targetCategory="true" parameterName="p0" beta="-0.009885395885884923"/>
+			<PCell targetCategory="true" parameterName="p1" beta="-0.048700244427732374"/>
+			<PCell targetCategory="true" parameterName="p2" beta="0.005736702886537103"/>
+			<PCell targetCategory="true" parameterName="p3" beta="0.030421167367379872"/>
+			<PCell targetCategory="true" parameterName="p4" beta="-0.05087525928859181"/>
+			<PCell targetCategory="true" parameterName="p5" beta="-0.10248480034950434"/>
+			<PCell targetCategory="true" parameterName="p6" beta="0.009216549320753888"/>
+			<PCell targetCategory="true" parameterName="p7" beta="-0.017102867222390843"/>
+			<PCell targetCategory="true" parameterName="p8" beta="0.06982019015983135"/>
+			<PCell targetCategory="true" parameterName="p9" beta="-0.02927741863519831"/>
+			<PCell targetCategory="true" parameterName="p10" beta="0.10527424101878874"/>
+			<PCell targetCategory="true" parameterName="p11" beta="0.03135343056863801"/>
+			<PCell targetCategory="true" parameterName="p12" beta="-0.027897677290589774"/>
+			<PCell targetCategory="true" parameterName="p13" beta="-7.290907759017366E-4"/>
+			<PCell targetCategory="true" parameterName="p14" beta="0.04317586437202894"/>
+			<PCell targetCategory="true" parameterName="p15" beta="-0.0207105746898599"/>
+			<PCell targetCategory="true" parameterName="p16" beta="0.04508437068453902"/>
+			<PCell targetCategory="true" parameterName="p17" beta="0.0017762745158811776"/>
+			<PCell targetCategory="true" parameterName="p18" beta="-0.022642560889735514"/>
+			<PCell targetCategory="true" parameterName="p19" beta="0.04980185448170048"/>
+			<PCell targetCategory="true" parameterName="p20" beta="0.00553885187348961"/>
+			<PCell targetCategory="true" parameterName="p21" beta="-0.008664536788218944"/>
+			<PCell targetCategory="true" parameterName="p22" beta="-0.05966336856085524"/>
+			<PCell targetCategory="true" parameterName="p23" beta="-0.0070184291213570005"/>
+			<PCell targetCategory="true" parameterName="p24" beta="-0.034438193151423914"/>
+			<PCell targetCategory="true" parameterName="p25" beta="-0.06594967202165439"/>
+			<PCell targetCategory="true" parameterName="p26" beta="0.010472985268255722"/>
+			<PCell targetCategory="true" parameterName="p27" beta="0.08980759133064425"/>
+			<PCell targetCategory="true" parameterName="p28" beta="-0.050462173242549875"/>
+			<PCell targetCategory="true" parameterName="p29" beta="-0.036732613164761556"/>
+			<PCell targetCategory="true" parameterName="p30" beta="0.043948679926875865"/>
+			<PCell targetCategory="true" parameterName="p31" beta="0.01878686082525142"/>
+			<PCell targetCategory="true" parameterName="p32" beta="0.009294153816306529"/>
+			<PCell targetCategory="true" parameterName="p33" beta="-0.10132350962659337"/>
+			<PCell targetCategory="true" parameterName="p34" beta="-0.02219857574088551"/>
+			<PCell targetCategory="true" parameterName="p35" beta="0.05909218968515433"/>
+			<PCell targetCategory="true" parameterName="p36" beta="0.007587189428725469"/>
+			<PCell targetCategory="true" parameterName="p37" beta="-0.031787467686507594"/>
+			<PCell targetCategory="true" parameterName="p38" beta="-0.14411002044622384"/>
+			<PCell targetCategory="true" parameterName="p39" beta="0.12956041580463315"/>
+			<PCell targetCategory="true" parameterName="p40" beta="0.035413007260891555"/>
+			<PCell targetCategory="true" parameterName="p41" beta="8.257289200927731E-4"/>
+			<PCell targetCategory="true" parameterName="p42" beta="0.05946932623885621"/>
+			<PCell targetCategory="true" parameterName="p43" beta="-0.06107897217069241"/>
+			<PCell targetCategory="true" parameterName="p44" beta="0.03770904342790822"/>
+			<PCell targetCategory="true" parameterName="p45" beta="-0.004571902622144863"/>
+			<PCell targetCategory="true" parameterName="p46" beta="9.330964337051114E-4"/>
+			<PCell targetCategory="true" parameterName="p47" beta="0.032241084088301765"/>
+			<PCell targetCategory="true" parameterName="p48" beta="0.034593365821525494"/>
+			<PCell targetCategory="true" parameterName="p49" beta="-0.021213262871298957"/>
+			<PCell targetCategory="true" parameterName="p50" beta="-0.025055747535280982"/>
+			<PCell targetCategory="true" parameterName="p51" beta="0.07289401738023442"/>
+			<PCell targetCategory="true" parameterName="p52" beta="-0.03724562906525601"/>
+			<PCell targetCategory="true" parameterName="p53" beta="-0.05341643272912942"/>
+			<PCell targetCategory="true" parameterName="p54" beta="-0.032502852099372245"/>
+			<PCell targetCategory="true" parameterName="p55" beta="-0.03753858210739963"/>
+			<PCell targetCategory="true" parameterName="p56" beta="-0.01580522964102393"/>
+			<PCell targetCategory="true" parameterName="p57" beta="0.08852862436973977"/>
+			<PCell targetCategory="true" parameterName="p58" beta="0.0591191364215099"/>
+			<PCell targetCategory="true" parameterName="p59" beta="0.07346160544129932"/>
+			<PCell targetCategory="true" parameterName="p60" beta="-0.029208754066550133"/>
+			<PCell targetCategory="true" parameterName="p61" beta="0.06828851643967483"/>
+			<PCell targetCategory="true" parameterName="p62" beta="0.041311395004138676"/>
+			<PCell targetCategory="true" parameterName="p63" beta="0.03028127012748483"/>
+			<PCell targetCategory="true" parameterName="p64" beta="-0.1057542263730647"/>
+			<PCell targetCategory="true" parameterName="p65" beta="-0.05917981088544027"/>
+			<PCell targetCategory="true" parameterName="p66" beta="0.03832333908926779"/>
+			<PCell targetCategory="true" parameterName="p67" beta="-0.09594635454836176"/>
+			<PCell targetCategory="true" parameterName="p68" beta="-0.08153944808271622"/>
+			<PCell targetCategory="true" parameterName="p69" beta="-0.03831085421383392"/>
+			<PCell targetCategory="true" parameterName="p70" beta="-0.03816087375143209"/>
+			<PCell targetCategory="true" parameterName="p71" beta="-0.04115069703153957"/>
+			<PCell targetCategory="true" parameterName="p72" beta="-0.048071990876438465"/>
+			<PCell targetCategory="true" parameterName="p73" beta="0.017099070402710477"/>
+			<PCell targetCategory="true" parameterName="p74" beta="0.03365638811319374"/>
+			<PCell targetCategory="true" parameterName="p75" beta="-0.04380586985576402"/>
+			<PCell targetCategory="true" parameterName="p76" beta="0.020668283514407762"/>
+			<PCell targetCategory="true" parameterName="p77" beta="0.04799508810176592"/>
+			<PCell targetCategory="true" parameterName="p78" beta="0.002320586468118212"/>
+			<PCell targetCategory="true" parameterName="p79" beta="0.0356920197610846"/>
+			<PCell targetCategory="true" parameterName="p80" beta="0.040341658058671376"/>
+			<PCell targetCategory="true" parameterName="p81" beta="0.08998572686409012"/>
+			<PCell targetCategory="true" parameterName="p82" beta="-0.032873816172863064"/>
+			<PCell targetCategory="true" parameterName="p83" beta="-0.06319737889570351"/>
+			<PCell targetCategory="true" parameterName="p84" beta="0.020162638279255938"/>
+			<PCell targetCategory="true" parameterName="p85" beta="0.03526582957624052"/>
+			<PCell targetCategory="true" parameterName="p86" beta="0.022165361934099303"/>
+			<PCell targetCategory="true" parameterName="p87" beta="0.03557473132815699"/>
+			<PCell targetCategory="true" parameterName="p88" beta="-0.04839269215212558"/>
+			<PCell targetCategory="true" parameterName="p89" beta="-0.07417761001257665"/>
+			<PCell targetCategory="true" parameterName="p90" beta="0.03219501656946247"/>
+			<PCell targetCategory="true" parameterName="p91" beta="-0.0735667337927387"/>
+			<PCell targetCategory="true" parameterName="p92" beta="-0.003465423438747916"/>
+			<PCell targetCategory="true" parameterName="p93" beta="-0.06482710054357632"/>
+			<PCell targetCategory="true" parameterName="p94" beta="-0.011570238965366393"/>
+			<PCell targetCategory="true" parameterName="p95" beta="5.751934470618952E-4"/>
+			<PCell targetCategory="true" parameterName="p96" beta="-0.057867349773660495"/>
+			<PCell targetCategory="true" parameterName="p97" beta="0.01973551078056008"/>
+			<PCell targetCategory="true" parameterName="p98" beta="0.07085296567924856"/>
+			<PCell targetCategory="true" parameterName="p99" beta="-0.013691395854470044"/>
+			<PCell targetCategory="true" parameterName="p100" beta="0.023079114992930763"/>
+		</ParamMatrix>
+	</GeneralRegressionModel>
+</PMML>
