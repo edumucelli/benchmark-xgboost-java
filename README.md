@@ -12,15 +12,7 @@ As XGBoost is a mainstream machine learning method and many applications are run
 
 The prediction latency is the metric evaluated. For each of the libraries above we benchmark 9 use cases (UC):
 
-╔═══════════════════════════════════════════╗
-║        Number of columns (features)       ║
-╠═══════════════╦══════╦══════╦══════╦══════╣
-║               ║      ║ 100  ║ 500  ║ 1000 ║
-║   Number of   ║══════╬══════╬══════╬══════╣
-║     rows      ║ 100  ║ UC 1 ║ UC 4 ║ UC 7 ║
-║   (samples)   ║ 500  ║ UC 2 ║ UC 5 ║ UC 8 ║
-║               ║ 1000 ║ UC 3 ║ UC 6 ║ UC 9 ║
-╚═══════════════╩════════════════════╩══════╝
+![Use cases](use-cases.png)
 
 The benchmark uses [JMH](https://openjdk.java.net/projects/code-tools/jmh/) and the results are in the [charts](charts) folder, they are separated by either linear or tree booster type and percentile.
 
