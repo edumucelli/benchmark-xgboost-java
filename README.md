@@ -39,7 +39,6 @@ show the 99th percentile for the prediction latency in milliseconds.
 
 ## Future work
 
-* Add other libraries
-** [Treelite](https://github.com/dmlc/treelite)
-** XGBoost using Python with [JEP](https://github.com/ninia/jep) or other Java to Python library.
+* Add [Treelite](https://github.com/dmlc/treelite)
+* Add XGBoost using Python with [JEP](https://github.com/ninia/jep) or other Java to Python library.
 * Add a ThreadPoolExecutor in order to parallelize the execution of predictors that [do not allow parallel](https://github.com/edumucelli/benchmark-xgboost-java/blob/master/src/main/java/benchmark/predictor/PMMLPredictor.java#L69) evaluation such as JPMML
