@@ -10,11 +10,13 @@ As XGBoost is a mainstream machine learning method and many applications are run
 * [XGBoost Predictor](https://github.com/komiya-atsushi/xgboost-predictor-java)
 * [RJava](https://github.com/s-u/rJava) with [XGBoost from Caret](https://github.com/topepo/caret)
 
+## Benchmark
+
 The prediction latency is the metric evaluated. For each of the libraries above we benchmark 9 use cases (UC):
 
 ![Use cases](use-cases.png)
 
-The benchmark uses [JMH](https://openjdk.java.net/projects/code-tools/jmh/) and the results are in the [charts](charts) folder, they are separated by either linear or tree booster type and percentile.
+The benchmark uses [JMH](https://openjdk.java.net/projects/code-tools/jmh/) and the results are in the [charts](charts) folder, they are separated by either linear or tree booster type and percentile. The benchmark has been executed with 2 warm-up iterations and 5 measurement iterations.
 
 The [charts.R](charts/charts.R) file is the R script used to generate the PDF charts. The benchmark results were created using my personal computer running a [Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz](https://ark.intel.com/content/www/us/en/ark/products/76616/intel-core-i7-4600u-processor-4m-cache-up-to-3-30-ghz.html).
 
@@ -28,9 +30,16 @@ show the 99th percentile for the prediction latency in milliseconds.
 ### Tree
 
 ![Prediction latency faceted by predictor](charts/prediction_time_by_predictor_tree_0.99.png)
-![Prediction latency faceted by use case][charts/prediction_time_by_uc_tree_0.99.png)
+![Prediction latency faceted by use case](charts/prediction_time_by_uc_tree_0.99.png)
 
 ### Linear
 
 ![Prediction latency faceted by predictor](charts/prediction_time_by_predictor_linear_0.99.png)
 ![Prediction latency faceted by use case](charts/prediction_time_by_uc_linear_0.99.png)
+
+## Future work
+
+* Add other libraries
+** [Treelite](https://github.com/dmlc/treelite)
+** XGBoost using Python with [JEP](https://github.com/ninia/jep) or other Java to Python library.
+* Add a ThreadPoolExecutor in order to parallelize the execution of predictors that [do not allow parallel](https://github.com/edumucelli/benchmark-xgboost-java/blob/master/src/main/java/benchmark/predictor/PMMLPredictor.java#L69) evaluation such as JPMML
