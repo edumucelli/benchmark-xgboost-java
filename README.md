@@ -16,7 +16,7 @@ The prediction latency is the metric evaluated. For each of the libraries above 
 
 ![Use cases](use-cases.png)
 
-The benchmark uses [JMH](https://openjdk.java.net/projects/code-tools/jmh/) and the results are in the [charts](charts) folder, they are separated by either linear or tree booster type and percentile. The benchmark has been executed with 2 warm-up iterations and 5 measurement iterations.
+The benchmark uses [JMH](https://openjdk.java.net/projects/code-tools/jmh/) and the results are in the [charts](charts) folder, they are separated by either linear or tree booster type (tree and linear) and percentile (.50, .90, .95, .99, .999, .9999). The benchmark has been executed with 2 warm-up iterations and 5 measurement iterations.
 
 The [charts.R](charts/charts.R) file is the R script used to generate the PDF charts. The benchmark results were created using my personal computer running a [Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz](https://ark.intel.com/content/www/us/en/ark/products/76616/intel-core-i7-4600u-processor-4m-cache-up-to-3-30-ghz.html).
 
@@ -24,8 +24,8 @@ The models used for predictions are not in this repository as their files are to
 
 ## Some results
 
-For all the results please check the [charts](charts) folder. The results show below are for both linear and tree booster types and
-show the 99th percentile for the prediction latency in milliseconds.
+For all the results please check the [charts](charts) folder. The results shown below are for both linear and tree booster types and
+depict the 99th percentile for the prediction latency in milliseconds.
 
 ### Tree
 
@@ -39,7 +39,7 @@ show the 99th percentile for the prediction latency in milliseconds.
 
 ## Future work
 
-* Add [Treelite](https://github.com/dmlc/treelite)
-* Add XGBoost using Python with [JEP](https://github.com/ninia/jep) or other Java to Python library.
+* Add [Treelite](https://github.com/dmlc/treelite) predictor
+* Add [JEP](https://github.com/ninia/jep) (or other Java to Python library) predictor
+* Add [Rserve](https://github.com/s-u/Rserve) and Caret predictor
 * Add a ThreadPoolExecutor in order to parallelize the execution of predictors that [do not allow parallel](https://github.com/edumucelli/benchmark-xgboost-java/blob/master/src/main/java/benchmark/predictor/PMMLPredictor.java#L69) evaluation such as JPMML
-* Add [Rserve](https://github.com/s-u/Rserve) and Caret as predictor.
