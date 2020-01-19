@@ -20,7 +20,7 @@ The benchmark uses [JMH](https://openjdk.java.net/projects/code-tools/jmh/) and 
 
 The [charts.R](charts/charts.R) file is the R script used to generate the PDF charts. The benchmark results were created using my personal computer running a [Intel(R) Core(TM) i7-4600U CPU @ 2.10GHz](https://ark.intel.com/content/www/us/en/ark/products/76616/intel-core-i7-4600u-processor-4m-cache-up-to-3-30-ghz.html).
 
-https://octodex.github.com/images/yaktocat.pngThe models used for predictions are not in this repository as their files are too large to be checked in into Github, which limits to 100MB per file. You can download the compressed models [here](https://drive.google.com/open?id=1wh_sr75q1-Q5cteoXrA9FsR-G1378gYQ) and extract them in the [resources](src/main/java/resources) folder.
+The models used for predictions are not in this repository as their files are too large to be checked in into Github, which limits to 100MB per file. You can download the compressed models [here](https://drive.google.com/open?id=1wh_sr75q1-Q5cteoXrA9FsR-G1378gYQ) and extract them in the [resources](src/main/java/resources) folder.
 
 ## Some results
 
@@ -42,3 +42,4 @@ show the 99th percentile for the prediction latency in milliseconds.
 * Add [Treelite](https://github.com/dmlc/treelite)
 * Add XGBoost using Python with [JEP](https://github.com/ninia/jep) or other Java to Python library.
 * Add a ThreadPoolExecutor in order to parallelize the execution of predictors that [do not allow parallel](https://github.com/edumucelli/benchmark-xgboost-java/blob/master/src/main/java/benchmark/predictor/PMMLPredictor.java#L69) evaluation such as JPMML
+* Add [Rserve](https://github.com/s-u/Rserve) and Caret as predictor.

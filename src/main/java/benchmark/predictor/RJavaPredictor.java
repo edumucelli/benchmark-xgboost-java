@@ -62,7 +62,7 @@ public class RJavaPredictor implements Predictor {
 
     @Override
     public boolean loadModel() {
-        log.info(System.getProperty("java.library.path"));
+        // log.info(System.getProperty("java.library.path"));
 
         // https://binfalse.de/2011/02/20/talking-r-through-java/
         if (!Rengine.versionCheck()) {
@@ -87,7 +87,7 @@ public class RJavaPredictor implements Predictor {
         engine.assign("model_file", resource);
         log.info(engine.eval("model_file").asString());
         engine.eval("model_fit <- readRDS(model_file)");
-        log.info("Model read finished");
+        // log.info("Model read finished");
         return true;
     }
 
