@@ -22,6 +22,22 @@ The [charts.R](charts/charts.R) file is the R script used to generate the PDF ch
 
 The models used for predictions are not in this repository as their files are too large to be checked in into Github, which limits to 100MB per file. You can download the compressed models [here](https://drive.google.com/open?id=1wh_sr75q1-Q5cteoXrA9FsR-G1378gYQ) and extract them in the [resources](src/main/java/resources) folder.
 
+## Running the benchmark
+
+At this moment the build.gradle does not work it with JMH out of the box, so you won't be able to just `./gradlew jmh`
+-- a pull request that make it work is very welcome.
+
+I suggest cloning and opening the project on your favorite IDE and setting up the following environment and JMV variables
+
+* '-Djava.library.path=' + '.:/usr/lib/R/site-library/rJava/jri/'
+* environment variable `R_HOME`, `'/usr/lib/R'`
+* environment variable `'CLASSPATH'`, `'.:/usr/lib/R/site-library/rJava/jri/'`
+* environment variable `'LD_LIBRARY_PATH'`, `'/usr/lib/R/site-library/rJava/jri/'`
+
+On Intellij IDEA my runner configuration looks like:
+
+![Runner configuration](images/runner-configuration.png)
+
 ## Some results
 
 For all the results please check the [charts](charts) folder. The results shown below are for both linear and tree booster types and
