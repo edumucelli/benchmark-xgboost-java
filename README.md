@@ -39,6 +39,7 @@ depict the 99th percentile for the prediction latency in milliseconds.
 
 ## Future work
 
+* Add build.gradle that works out-of-the-box with JMH
 * Add [Treelite](https://github.com/dmlc/treelite) predictor
 * Add [JEP](https://github.com/ninia/jep) (or other Java to Python library) predictor
 * Add [Rserve](https://github.com/s-u/Rserve) and Caret predictor

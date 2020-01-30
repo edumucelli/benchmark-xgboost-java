@@ -1,9 +1,15 @@
+plugins {
+    id 'idea'
+    id 'java-library'
+    id 'application'
+    id "me.champeau.gradle.jmh" version "0.5.0"
+    id "io.freefair.lombok" version "4.1.6"
+}
+
+//apply from: rootProject.file('gradle/jmh.gradle')
+
 group 'com.blablacar'
 version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
 
 repositories {
     mavenLocal()
@@ -11,18 +17,35 @@ repositories {
     mavenCentral()
 }
 
+sourceCompatibility = 1.8
+
+// applicationDefaultJvmArgs = ['-Djava.library.path=' + '.:/usr/lib/R/site-library/rJava/jri/']
+// environment "R_HOME", "/usr/lib/R"
+// environment 'CLASSPATH', '.:/usr/lib/R/site-library/rJava/jri/'
+// environment 'LD_LIBRARY_PATH', '/usr/lib/R/site-library/rJava/jri/'
+
+jmh {
+    duplicateClassesStrategy = DuplicatesStrategy.WARN
+}
+
+application {
+    mainClassName = 'benchmark.Main'
+}
+
 dependencies {
     // Machine Learning libraries
-    compile group: 'org.jpmml', name: 'pmml-evaluator', version: '1.3.5' // 1.4.14
+    compile group: 'org.jpmml', name: 'pmml-evaluator', version: '1.4.14'
     compile group: 'com.github.lucarosellini.rJava', name: 'JRIEngine', version: '0.9-7' // 0.9-8-b5
-    compile group: 'biz.k11i', name: 'xgboost-predictor', version: '0.2.1' // 0.3.0
-    compile group: 'ml.dmlc', name: 'xgboost4j', version: '0.72' // 0.90
+    compile group: 'biz.k11i', name: 'xgboost-predictor', version: '0.3.0'
+    compile group: 'ml.dmlc', name: 'xgboost4j', version: '0.90'
     // Utils
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1'
     compile group: 'org.projectlombok', name: 'lombok', version: '1.16.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.10'
     compile group: 'com.google.guava', name: 'guava', version: '11.0.2'
     compile group: 'commons-io', name: 'commons-io', version: '2.5'
+
     // Benchmark
-    compile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.22'
-    compile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.22'
+    compile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.23'
+//    compile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.23'
 }
