@@ -102,6 +102,7 @@ data = read.csv(
     # Extract both percentile and concise name from default JMH class naming
     mutate(PREDICTOR = purrr::pmap_chr(list(BENCHMARK), predictor_name_from_benchmark)) %>%
     mutate(PERCENTILE = purrr::pmap_chr(list(BENCHMARK), percentile_from_benchmark)) %>%
+    filter(PREDICTOR != "") %>%
     # BENCHMARK column is not required anymore
     select(-BENCHMARK) %>%
     # Transform ROWS and COLUMNS into a unique factor representing the benchmark use cases
@@ -109,13 +110,19 @@ data = read.csv(
     mutate(UC = factor(UC, levels = c("100x100", "500x100", "1000x100", "100x500", "500x500", "1000x500", "100x1000", "500x1000", "1000x1000"),
                 labels = c("UC 1 (100x100)", "UC 2 (500x100)", "UC 3 (1000x100)", "UC 4 (100x500)", "UC 5 (500x500)", "UC 6 (1000x500)", "UC 7 (100x1000)", "UC 8 (500x1000)", "UC 9 (1000x1000)")))
 
-
 # Generate charts for all percentiles and all booster types
 for (at_percentile in EVALUATED_PERCENTILES) {
     for (booster_type in EVALUATED_BOOSTER_TYPES) {
         plot_per_booster_and_percentile(data, booster_type, at_percentile)
     }
 }
+
+# == Convert some images to PNG
+
+# convert -density 150 prediction_time_by_uc_tree_0.99.pdf -quality 90 prediction_time_by_uc_tree_0.99.png
+# convert -density 150 prediction_time_by_uc_linear_0.99.pdf -quality 90 prediction_time_by_uc_linear_0.99.png
+# convert -density 150 prediction_time_by_predictor_tree_0.99.pdf -quality 90 prediction_time_by_predictor_tree_0.99.png
+# convert -density 150 prediction_time_by_predictor_linear_0.99.pdf -quality 90 prediction_time_by_predictor_linear_0.99.png
 
 # == For a single chart, e.g., 99th percentile using tree booster
 
