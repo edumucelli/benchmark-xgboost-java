@@ -1,12 +1,10 @@
 plugins {
     id 'idea'
+    id 'java'
     id 'java-library'
     id 'application'
-    id "me.champeau.gradle.jmh" version "0.5.0"
     id "io.freefair.lombok" version "4.1.6"
 }
-
-//apply from: rootProject.file('gradle/jmh.gradle')
 
 group 'com.blablacar'
 version '1.0-SNAPSHOT'
@@ -24,12 +22,21 @@ sourceCompatibility = 1.8
 // environment 'CLASSPATH', '.:/usr/lib/R/site-library/rJava/jri/'
 // environment 'LD_LIBRARY_PATH', '/usr/lib/R/site-library/rJava/jri/'
 
-jmh {
-    duplicateClassesStrategy = DuplicatesStrategy.WARN
+sourceSets {
+    jmh {
+       java.srcDirs = ['src/main/java/']
+    }
 }
 
 application {
     mainClassName = 'benchmark.Main'
+}
+
+task ("jmh", type: JavaExec) {
+    dependsOn['jmhClasses']
+    group = "benchmark"
+    main = 'org.openjdk.jmh.Main'
+    classpath = sourceSets["jmh"].runtimeClasspath
 }
 
 dependencies {
@@ -46,6 +53,8 @@ dependencies {
     compile group: 'commons-io', name: 'commons-io', version: '2.5'
 
     // Benchmark
-    compile group: 'org.openjdk.jmh', name: 'jmh-core', version: '1.23'
-//    compile group: 'org.openjdk.jmh', name: 'jmh-generator-annprocess', version: '1.23'
+    jmhImplementation(project)
+    implementation 'org.openjdk.jmh:jmh-core:1.23'
+    jmhImplementation 'org.openjdk.jmh:jmh-core:1.23'
+    jmhAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.23'
 }

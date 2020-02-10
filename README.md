@@ -24,10 +24,9 @@ The models used for predictions are not in this repository as their files are to
 
 ## Running the benchmark
 
-At this moment the build.gradle does not work it with JMH out of the box, so you won't be able to just `./gradlew jmh`
--- a pull request that make it work is very welcome.
-
-I suggest cloning and opening the project on your favorite IDE and setting up the following environment and JMV variables
+You can either just `./gradlew jmh` or run it inside your IDE. Given that the project relies on RJava for one the benchmarks,
+you will have to setup environment variables pointing to your JRI and R installation. I suggest cloning and opening the
+project on your favorite IDE and setting up the following environment and JMV variables
 
 * '-Djava.library.path=' + '.:/usr/lib/R/site-library/rJava/jri/'
 * environment variable `R_HOME`, `'/usr/lib/R'`
